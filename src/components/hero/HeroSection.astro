@@ -1,0 +1,28 @@
+---
+import Button from '@components/ui/Button.astro';
+---
+
+<div
+  class="h-[100vh] bg-hero-pattern bg-cover bg-center flex items-center justify-center w-full"
+>
+  <div class="text-left px-4 w-[48%] max-md:w-[90%]">
+    <h1 class="text-6xl max-md:text-7xl max-md:text-center font-bold text-black mb-6">
+      Navigating the digital landscape for success
+    </h1>
+    <p class="max-md:text-center text-2xl text-black mb-8">
+      Our digital marketing agency helps businesses grow and succeed online through a range of services including SEO, PPC, social media marketing, and content creation.
+    </p>
+    <Button href="/contact" variant='primary' class="px-8 py-4 text-lg bg-black text-white max-md:w-full max-md:text-center">
+      Book a consultation
+    </Button>
+  </div>
+  <div class="text-center px-4 w-[48%] max-md:hidden">
+    <img
+      src="/Illustration.png"
+      alt="Hero Image"
+      class="mx-auto w-full h-auto object-cover"
+    />
+  </div>
+
+
+</div>
