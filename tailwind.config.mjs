@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         sans: ['"Space Grotesk Variable"'],
       },
+      colors: {
+        heyOzGreen: "#B9FF66"
+      }
     },
   },
   plugins: [],
