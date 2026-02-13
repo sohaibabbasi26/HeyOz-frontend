@@ -6,13 +6,16 @@ interface Props {
 
 const { heading, subHeading } = Astro.props;
 
+const targetIndex = Math.ceil(subHeading.length * 0.7);
+const breakIndex = subHeading.lastIndexOf(' ', targetIndex);
+const firstLine = subHeading.slice(0, breakIndex);
+const secondLine = subHeading.slice(breakIndex + 1);
+
 ---
 
-
-
-<div class="w-full flex gap-[20px]">
-    <h2 class="text-3xl text-black font-medium bg-heyOzGreen px-[7px] rounded-md">
+<div class="w-full flex max-sm:flex-col max-sm:justify-center max-sm:items-center gap-[20px]">
+    <h2 class="max-sm:text-2xl text-3xl text-black font-medium  bg-heyOzGreen px-[7px] rounded-md">
         {heading}
     </h2>
-    <p class="w-[30%] text-[12px]">{subHeading}</p>
+    <p class="text-[12px] max-sm:text-center">{firstLine}<br />{secondLine}</p>
 </div>

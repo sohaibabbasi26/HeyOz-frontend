@@ -1,0 +1,59 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import StageCapsule from "./StageCapsule.astro";
+
+const heading = "Our Working Process";
+const subHeading = `Step-by-Step Guide to Achieving Your Business Goals`;
+const stages = [
+  {
+    stageNumber: "01",
+    title: "Consultation",
+    description:
+      "During the initial consultation, we will discuss your business goals and objectives, target audience, and current marketing efforts. This will allow us to understand your needs and tailor our services to best fit your requirements.",
+  },
+  {
+    stageNumber: "02",
+    title: "Research and Strategy Development",
+    description:
+      "Based on the information gathered during the consultation, we will develop a comprehensive digital marketing strategy that outlines the tactics and channels we will use to achieve your goals.",
+  },
+  {
+    stageNumber: "03",
+    title: "Implementation",
+    description:
+      "Once the strategy is developed, we will begin implementing the various tactics and channels outlined in the plan. This may include creating and managing social media accounts, running paid advertising campaigns, optimizing your website for search engines, and creating content.",
+  },
+  {
+    stageNumber: "04",
+    title: "Monitoring and Optimization",
+    description:
+      "We will continuously monitor the performance of our digital marketing efforts and make adjustments as needed to ensure that we are achieving the best possible results.",
+  },
+  {
+    stageNumber: "05",
+    title: "Reporting and Communication",
+    description:
+      "We will provide regular reports on the performance of our digital marketing efforts, including key metrics such as website traffic, conversions, and ROI. We will also analyze the data to identify areas for improvement and make recommendations for future strategies.",
+  },
+  {
+    stageNumber: "06",
+    title: "Continual Improvement",
+    description:
+      "We will provide ongoing support and maintenance to ensure that your digital marketing efforts continue to perform well over time. This may include updating your website, creating new content, and adjusting your strategy as needed to stay ahead of the competition.",
+  }
+];
+---
+
+<div class="h-[120vh] max-sm:h-auto w-full flex justify-center items-center mt-[2rem]">
+  <div class="w-[96%] h-auto mb-[1rem]">
+    <SectionHeader heading={heading} subHeading={subHeading} />
+
+    {stages.map((stage) => (
+      <StageCapsule
+        stageNumber={stage.stageNumber}
+        title={stage.title}
+        description={stage.description}
+      />
+    ))}
+  </div>
+</div>

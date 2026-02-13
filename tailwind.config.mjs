@@ -7,7 +7,9 @@ export default {
         sans: ['"Space Grotesk Variable"'],
       },
       colors: {
-        heyOzGreen: "#B9FF66"
+        heyOzGreen: "#B9FF66",
+        dark: "#191A23",
+        heyOzGray: "#F3F3F3"
       }
     },
   },

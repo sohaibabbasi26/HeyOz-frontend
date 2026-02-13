@@ -1,0 +1,47 @@
+---
+interface Props {
+  stageNumber: string;
+  title: string;
+  description: string;
+}
+
+const { stageNumber, title, description } = Astro.props;
+---
+
+<div class="stage-capsule w-full max-sm:min-h-5 flex-1 bg-heyOzGray rounded-3xl mt-4 px-8 max-sm:px-6 py-7 shadow-[0_0_0_1px_black,0_4px_0_0_black] transition-colors duration-300">
+  <div class="flex items-center justify-between">
+    <div class="flex gap-4 max-sm:gap-2 items-center">
+      <span class="text-3xl font-medium text-black max-sm:text-2xl">{stageNumber}</span>
+      <h3 class="text-lg font-medium max-sm:text-sm ">{title}</h3>
+    </div>
+    <button class="toggle-btn transition-transform duration-300">
+      <img src="/plus-icon.png" alt="Toggle" class="h-8 img" />
+    </button>
+  </div>
+  <div class="description grid grid-rows-[0fr] transition-[grid-template-rows,margin] duration-300">
+    <div class="overflow-hidden">
+      <hr class="border-black mb-4" />
+      <p>{description}</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.stage-capsule').forEach((capsule) => {
+    const btn = capsule.querySelector('.toggle-btn');
+    const desc = capsule.querySelector('.description');
+    const img = capsule.querySelector('img');
+
+    btn?.addEventListener('click', () => {
+      desc?.classList.toggle('grid-rows-[1fr]');
+      desc?.classList.toggle('mt-4');
+      capsule.classList.toggle('!bg-heyOzGreen');
+      if (img) {
+        img.src.includes('plus-icon.png')
+          ? (img.src = '/minus-icon.png')
+          : (img.src = '/plus-icon.png');
+      }
+
+    });
+  });
+</script>

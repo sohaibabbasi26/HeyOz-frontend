@@ -1,13 +1,14 @@
 ---
-import SectionHeader from "../ui/SectionHeader.astro"
+import SectionHeader from "../ui/SectionHeader.astro";
+import Container from "./Container.astro";
 
-const heading = 'Case Studies'
+const heading = "Case Studies";
 const subHeading = `Explore Real-Life Examples of Our Proven Digital Marketing Success through Our Case Studies`;
 ---
 
-
-<div class="h-[50vh] w-full flex justify-center items-center">
-    <div class="w-[96%]">
-        <SectionHeader heading={heading} subHeading={subHeading} />
-    </div>
+<div class="h-auto w-full flex justify-center items-center">
+  <div class="w-[96%] h-full flex flex-col items-center justify-center max-lg:gap-[1rem]">
+    <SectionHeader heading={heading} subHeading={subHeading} />
+    <Container />
+  </div>
 </div>
