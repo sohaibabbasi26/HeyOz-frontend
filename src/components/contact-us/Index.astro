@@ -1,0 +1,94 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import Button from "../ui/Button.astro";
+const heading = "Contact Us";
+const subHeading =
+  "Connect with Us: Let's Discuss Your Digital Marketing Needs";
+---
+
+<div class="h-auto my-[3rem] w-full flex justify-center items-center">
+  <div
+    class="w-[88%] h-full flex flex-col items-center justify-center max-lg:gap-[1rem]"
+  >
+    <SectionHeader heading={heading} subHeading={subHeading} />
+
+    <div
+      class="h-[40rem] mt-[2rem] bg-heyOzGray w-full flex justify-end items-center rounded-3xl"
+    >
+      <div class="h-[85%] w-[95%]  flex relative">
+        <div class="h-full w-[50%] flex flex-col">
+            <div class="flex gap-6 mb-8">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input
+                type="radio"
+                name="contact-type"
+                value="say-hi"
+                checked
+                class="w-5 h-5 accent-heyOzGreen"
+              />
+              <span class="text-gray-700 font-medium">Say Hi</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input
+                type="radio"
+                name="contact-type"
+                value="get-quote"
+                class="w-5 h-5 accent-heyOzGreen"
+              />
+              <span class="text-gray-700 font-medium">Get a Quote</span>
+            </label>
+          </div>
+
+          <!-- Form Fields -->
+          <form class="flex flex-col gap-6">
+            <!-- Name Input -->
+            <div class="flex flex-col gap-2">
+              <label class="text-gray-700 font-medium text-md">Name</label>
+              <input
+                type="text"
+                placeholder="Name"
+                class="px-4 py-3 rounded-xl border-2 border-gray-600 focus:outline-none bg-white"
+              />
+            </div>
+
+            <!-- Email Input -->
+            <div class="flex flex-col gap-2">
+              <label class="text-gray-700 font-medium text-md"
+                >Email*</label
+              >
+              <input
+                type="email"
+                placeholder="Email"
+                required
+                class="px-4 py-3 rounded-xl border-2 border-gray-600 focus:outline-none bg-white"
+              />
+            </div>
+
+            <!-- Message Textarea -->
+            <div class="flex flex-col gap-2">
+              <label class="text-gray-700 font-medium text-md"
+                >Message*</label
+              >
+              <textarea
+                placeholder="Message"
+                required
+                rows="5"
+                class="px-4 py-3 rounded-xl border-2 border-gray-600 focus:outline-none bg-white resize-none"
+              ></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <Button variant="outline" class="w-full mt-4 bg-black text-white">Send Message</Button>
+          </form>
+        </div>
+
+          <img
+            src="/contact-us.png"
+            alt="Contact Us"
+            class="h-full absolute right-0 -ml-[15rem]"
+            />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
