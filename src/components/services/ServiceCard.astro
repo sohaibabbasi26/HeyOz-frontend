@@ -1,0 +1,56 @@
+---
+interface Props {
+  title: string;
+  image: string;
+  cardBg?: string;
+  headingBg?: string;
+  arrowBg?: string;
+}
+
+const {
+  title,
+  image,
+  cardBg = "bg-heyOzGray",
+  headingBg = "bg-heyOzGreen",
+  arrowBg = "bg-black",
+} = Astro.props;
+
+---
+
+<div
+  class:list={[
+    cardBg,
+    "stage-capsule w-full h-[14rem] flex justify-center items-center overflow-hidden rounded-3xl max-sm:px-6 shadow-[0_0_0_1px_black,0_4px_0_0_black] transition-colors duration-300"
+  ]}
+>
+  <div class="w-[45%] h-[85%] flex items-center justify-start">
+    <div class="flex flex-col h-full justify-between">
+      <div>
+        <span
+          class:list={[
+            "text-2xl font-medium px-[7px] py-1 rounded-[10px] decoration-clone inline leading-relaxed",
+            headingBg,
+          ]}
+        >
+          {title}
+        </span>
+      </div>
+
+      <div class="flex gap-2 items-center">
+        <div
+          class:list={["h-[25px] w-[25px] rounded-full flex justify-center items-center", arrowBg]}
+        >
+          <img
+            src="/navigate-arrow.png"
+            alt="Icon"
+            class="h-4 w-4 object-cover rounded-full"
+          />
+        </div>
+        <span class="text-[1rem]">Learn more</span>
+      </div>
+    </div>
+  </div>
+  <div class="w-[45%] h-[85%] flex items-center justify-center">
+    <img src={image} alt={title} class="object-cover h-[90%]" />
+  </div>
+</div>
