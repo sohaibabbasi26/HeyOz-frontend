@@ -1,0 +1,61 @@
+---
+import Button from "../ui/Button.astro";
+import SectionHeader from "../ui/SectionHeader.astro"
+import MemberCard from "./MemberCard.astro";
+
+const heading = "Team";
+const subHeading = "Meet the skilled and experienced team behind our successful digital marketing strategies";
+const membersData = [
+    {
+        name: "John Smith",
+        position: "Founder & CEO",
+        image: "/Picture.png",
+        description: "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy"
+    },
+    {
+        name: "Jane Doe",
+        position: "Director of Operations",
+        image: "/Picture-two.png",
+        description: "7+ years of experience in project management and team leadership. Strong organizational and communication skills"
+    },
+    {
+        name: "Michael Brown",
+        position: "Senior SEO Specialist",
+        image: "/Picture-three.png",
+        description: "5+ years of experience in SEO and content creation. Proficient in keyword research and on-page optimization"
+    },
+    {
+        name: "Emily Johnson",
+        position: "PPC Manager",
+        image: "/Picture-four.png",
+        description: "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis"
+    },
+    {
+        name: "Brian Williams",
+        position: "Social Media Specialist",
+        image: "/Picture-five.png",
+        description: "4+ years of experience in social media marketing. Proficient in creating and scheduling content, analyzing metrics, and building engagement"
+    },
+    {
+        name: "Sarah Karim",
+        position: "Content Creator  ",
+        image: "/Picture-six.png",
+        description: "2+ years of experience in writing and editing. Skilled in creating compelling, SEO-optimized content for various industries"
+    }
+]
+---
+
+
+<div class="w-full h-auto flex flex-col my-[3rem] items-center justify-center">
+    <div class="flex flex-col w-[88%] gap-[2rem]">
+        <SectionHeader heading={heading} subHeading={subHeading} />
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2rem]">
+            {membersData.map((member) => <MemberCard {...member} />)}
+        </div>
+        <div class="flex my-[1rem] justify-end">
+            <Button variant="outline" class="px-8 py-4 text-lg bg-black text-white">
+                See all team
+            </Button>
+        </div>
+    </div>
+</div>
