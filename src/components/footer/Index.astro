@@ -65,24 +65,24 @@ const currentPath = Astro.url.pathname;
       </div>
     </div>
 
-    <div class="my-[2rem] w-[90%] flex justify-between">
-      <div class="flex flex-col gap-[1rem] ">
+    <div class="my-[2rem] w-[90%] flex max-md:flex-col   justify-between">
+      <div class="flex flex-col gap-[1rem] max-md:items-center max-md:mb-[1rem]">
         <span
           class="bg-heyOzGreen px-3 py-1 inline-block rounded-md text-black font-medium w-fit"
           >Contact us:</span
         >
         <span class="text-white">Email: info@positivus.com</span>
         <span class="text-white">Phone: 555-567-8901</span>
-        <span class="text-white"
+        <span class="text-white text-center"
           >Address: 1234 Main St Moonstone City, Stardust State 12345</span
         >
       </div>
 
-      <div class="bg-[#292A32] rounded-lg flex gap-[1rem] p-[4rem]">
+      <div class="bg-[#292A32] rounded-lg flex gap-[1rem] max-md:py-[1rem] p-[4rem] max-md:flex-col ">
         <input
           type="email"
           placeholder="Enter your email"
-          class="px-4 py-2 rounded-md bg-transparent border-2 border-gray-600 focus:outline-none text-white"
+          class="px-4 py-2 rounded-md bg-transparent border-2 border-gray-600 focus:outline-none text-white max-md:text-center"
         />
         <Button variant="outline" class="bg-heyOzGreen text-black"
           >Subscribe to news</Button

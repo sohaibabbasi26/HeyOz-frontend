@@ -9,34 +9,34 @@ const subHeading =
 const serviceCardData = [
   {
     title: "Search engine optimization",
-    image: "/service-one.svg",
+    image: "/service-one.png",
   },
   {
     title: "Pay-per-click advertising",
-    image: "/service-two.svg",
+    image: "/service-two.png",
     cardBg: "bg-heyOzGreen",
     headingBg: "bg-white",
   },
   {
     title: "Social Media Marketing",
-    image: "/service-three.svg",
+    image: "/service-three.png",
     cardBg: "bg-black",
     headingBg: "bg-white",
     arrowBg: "bg-white",
   },
   {
     title: "Email Marketing",
-    image: "/service-four.svg",
+    image: "/service-four.png",
   },
   {
     title: "Content Creation",
-    image: "/service-five.svg",
+    image: "/service-five.png",
     cardBg: "bg-heyOzGreen",
     headingBg: "bg-white",
   },
   {
     title: "Analytics and Tracking",
-    image: "/service-six.svg",
+    image: "/service-six.png",
     cardBg: "bg-black",
     headingBg: "bg-heyOzGreen",
     arrowBg: "bg-white",
@@ -54,11 +54,11 @@ const serviceCardData = [
 
     <div>
       <div
-        class="h-[14rem] mt-[1rem] rounded-3xl bg-heyOzGray flex items-center justify-center"
+        class="h-[14rem] max-md:h-auto mt-[1rem] rounded-3xl py-[1rem] bg-heyOzGray flex items-center justify-center"
       >
-        <div class="flex w-[90%] justify-between items-center">
+        <div class="flex w-[90%] justify-between max-md:justify-center items-center">
           <div
-            class="w-[50%] h-[85%] flex flex-col items-start justify-between gap-[1.5rem]"
+            class="w-[50%] max-md:flex-1 max-md:items-center h-[85%] flex flex-col items-start justify-between gap-[1.5rem]"
           >
             <h3 class="text-2xl font-medium">Let’s make things happen</h3>
             <p class="text-sm">
@@ -70,11 +70,11 @@ const serviceCardData = [
             >
           </div>
 
-          <div class="w-[50%] h-[85%] flex flex-col items-end justify-center">
+          <div class="w-[50%] h-[85%] flex flex-col items-end justify-center max-md:hidden">
             <img
               src="/make-things-happen.png"
               alt="Contact Us"
-              class="h-[17rem]"
+              class="h-[17rem] "
             />
           </div>
         </div>

@@ -11,21 +11,21 @@ const { name, position, image, description } = Astro.props;
 
 <div
   class:list={[
-    "stage-capsule w-[22rem] h-[18rem] flex justify-center items-center overflow-hidden rounded-3xl max-sm:px-6 shadow-[0_0_0_1px_black,0_4px_0_0_black] transition-colors duration-300"
+    "stage-capsule w-full h-[18rem] flex justify-center items-center overflow-hidden rounded-3xl max-sm:px-6 shadow-[0_0_0_1px_black,0_4px_0_0_black] transition-colors duration-300"
   ]}
 >
   <div class="h-[95%] w-[95%] flex flex-col items-center relative">
     <img src="/linkedin-icon.png" alt="LinkedIn" class="absolute top-4 right-4 h-6 w-6 object-contain" />
     <div class="flex-1 flex h-[50%] w-[85%] items-end pb-2 justify-between gap-[1rem]">
-        <img src={image} alt={name} class="h-[80%] w-[45%]" />
+        <img src={image} alt={name} class="h-[80%] w-[45%] object-cover" />
         <div class="h-full flex flex-col justify-end items-start w-full">
             <h3 class="font-medium text-[15px]">{name}</h3>
             <span class="text-sm w-full">{position}</span>
         </div>
     </div>
-    <div class="w-[80%] h-[1.5px] bg-black"></div>
-    <div class="w-[85%] min-h-[50%]">
-        <p class="my-[1rem] text-sm">
+    <hr class="w-[85%] border-t-2 border-black my-2" />
+    <div class="w-[85%] flex-1">
+        <p class="text-sm leading-relaxed">
             {description}
         </p>
     </div>

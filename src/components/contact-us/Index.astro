@@ -15,9 +15,9 @@ const subHeading =
     <div
       class="h-[40rem] mt-[2rem] bg-heyOzGray w-full flex justify-end items-center rounded-3xl"
     >
-      <div class="h-[85%] w-[95%]  flex relative">
-        <div class="h-full w-[50%] flex flex-col">
-            <div class="flex gap-6 mb-8">
+      <div class="h-[85%] w-[95%] flex relative">
+        <div class="h-full w-[50%] flex flex-col max-md:w-full max-md:items-center justify-center gap-[2rem]">
+          <div class="flex gap-6 max-md:gap-2 max-md:mb-0 mb-8">
             <label class="flex items-center gap-2 cursor-pointer">
               <input
                 type="radio"
@@ -40,7 +40,7 @@ const subHeading =
           </div>
 
           <!-- Form Fields -->
-          <form class="flex flex-col gap-6">
+          <form class="flex flex-col gap-6 max-md:gap-2 max-md:w-[90%]">
             <!-- Name Input -->
             <div class="flex flex-col gap-2">
               <label class="text-gray-700 font-medium text-md">Name</label>
@@ -53,9 +53,7 @@ const subHeading =
 
             <!-- Email Input -->
             <div class="flex flex-col gap-2">
-              <label class="text-gray-700 font-medium text-md"
-                >Email*</label
-              >
+              <label class="text-gray-700 font-medium text-md">Email*</label>
               <input
                 type="email"
                 placeholder="Email"
@@ -66,9 +64,7 @@ const subHeading =
 
             <!-- Message Textarea -->
             <div class="flex flex-col gap-2">
-              <label class="text-gray-700 font-medium text-md"
-                >Message*</label
-              >
+              <label class="text-gray-700 font-medium text-md">Message*</label>
               <textarea
                 placeholder="Message"
                 required
@@ -78,16 +74,17 @@ const subHeading =
             </div>
 
             <!-- Submit Button -->
-            <Button variant="outline" class="w-full mt-4 bg-black text-white">Send Message</Button>
+            <Button variant="outline" class="w-full mt-4 bg-black text-white"
+              >Send Message</Button
+            >
           </form>
         </div>
 
-          <img
-            src="/contact-us.png"
-            alt="Contact Us"
-            class="h-full absolute right-0 -ml-[15rem]"
-            />
-        </div>
+        <img
+          src="/contact-us.png"
+          alt="Contact Us"
+          class="h-full absolute right-0 -ml-[15rem] max-md:hidden"
+        />
       </div>
     </div>
   </div>

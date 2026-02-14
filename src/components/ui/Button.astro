@@ -7,11 +7,11 @@ interface Props {
 
 const { href, variant = 'outline', class: className } = Astro.props;
 
-const baseClasses = 'inline-block rounded-xl px-7 py-3 text-[1.1rem] font-[400] transition-colors';
+const baseClasses = 'inline-block rounded-xl px-7 py-3 text-[1.1rem] font-[400] transition-all duration-300';
 
 const variants = {
-  primary: 'bg-blue-600 text-white hover:bg-blue-700',
-  outline: 'border border-gray-950 text-black hover:bg-gray-100 hover:text-blue-600',
+  primary: 'bg-dark text-white hover:bg-heyOzGreen hover:text-dark',
+  outline: 'border border-gray-950 text-black hover:bg-dark hover:text-white hover:border-dark',
 };
 
 const classes = `${baseClasses} ${variants[variant]} ${className ?? ''}`.trim();

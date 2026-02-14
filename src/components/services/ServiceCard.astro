@@ -40,17 +40,25 @@ const {
         <div
           class:list={["h-[25px] w-[25px] rounded-full flex justify-center items-center", arrowBg]}
         >
-          <img
+          {cardBg === "bg-black" ? (
+            <img
+              src="/black-arrow.png"
+              alt="Arrow Right"
+              class="h-4 w-4 object-cover rounded-full bg-white"
+            />
+          ) : (
+            <img
             src="/navigate-arrow.png"
             alt="Icon"
             class="h-4 w-4 object-cover rounded-full"
           />
+          )}
         </div>
-        <span class="text-[1rem]">Learn more</span>
+        <span class={`text-[1rem] ${cardBg === "bg-black" ? "text-white" : "text-black"}`}>Learn more</span>
       </div>
     </div>
   </div>
   <div class="w-[45%] h-[85%] flex items-center justify-center">
-    <img src={image} alt={title} class="object-cover h-[90%]" />
+    <img src={image} alt={title} class="object-cover h-[90%] max-sm:h-[80%] max-sm:w-[80%]" />
   </div>
 </div>
