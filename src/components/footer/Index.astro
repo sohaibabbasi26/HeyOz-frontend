@@ -1,0 +1,101 @@
+---
+import SectionHeader from "../ui/SectionHeader.astro";
+import Button from "../ui/Button.astro";
+const heading = "Contact Us";
+const subHeading =
+  "Connect with Us: Let's Discuss Your Digital Marketing Needs";
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+const navLinks: NavLink[] = [
+  { label: "About Us", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Use Cases", href: "/contact" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Blog", href: "/blog" },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<div class="h-auto mt-[3rem] w-full flex justify-center items-center">
+  <div
+    class="w-[88%] h-full flex flex-col items-center bg-[#191A23] justify-center max-lg:gap-[1rem] rounded-t-3xl"
+  >
+    <div class="w-[90%] flex justify-between items-center my-[2rem]">
+      <a href="/" class="text-xl font-bold text-gray-900">
+        <img src="/Logo-white.png" alt="HeyOz Logo" class="h-6 w-[170px]" />
+      </a>
+
+      <ul class="hidden items-center gap-8 lg:flex">
+        {
+          navLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class:list={[
+                  "text-[1.1rem] text-white font-[400] transition-colors hover:text-blue-600 underline",
+                ]}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <div class="flex gap-[1rem]">
+        <img
+          src="/linkedin-icon-white.png"
+          alt="Social Media Icons"
+          class="h-6 w-auto"
+        />
+        <img
+          src="/twitter-icon-white.png"
+          alt="Social Media Icons"
+          class="h-6 w-auto"
+        />
+        <img
+          src="/facebook-icon-white.png"
+          alt="Social Media Icons"
+          class="h-6 w-auto"
+        />
+      </div>
+    </div>
+
+    <div class="my-[2rem] w-[90%] flex justify-between">
+      <div class="flex flex-col gap-[1rem] ">
+        <span
+          class="bg-heyOzGreen px-3 py-1 inline-block rounded-md text-black font-medium w-fit"
+          >Contact us:</span
+        >
+        <span class="text-white">Email: info@positivus.com</span>
+        <span class="text-white">Phone: 555-567-8901</span>
+        <span class="text-white"
+          >Address: 1234 Main St Moonstone City, Stardust State 12345</span
+        >
+      </div>
+
+      <div class="bg-[#292A32] rounded-lg flex gap-[1rem] p-[4rem]">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          class="px-4 py-2 rounded-md bg-transparent border-2 border-gray-600 focus:outline-none text-white"
+        />
+        <Button variant="outline" class="bg-heyOzGreen text-black"
+          >Subscribe to news</Button
+        >
+      </div>
+    </div>
+
+    <div class="w-[90%] h-[1.5px] bg-white"></div>
+
+    <div class="w-[90%] flex gap-[3rem] my-[4rem]">
+        <span class="text-white">© 2023 Positivus. All Rights Reserved.</span>
+        <a href="/privacy-policy" class="text-white underline">Privacy Policy</a>
+    </div>
+
+  </div>
+</div>
