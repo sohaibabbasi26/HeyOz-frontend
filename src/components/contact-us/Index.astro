@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import ContactUsImage from "../../assets/images/contact-us.png";
 import SectionHeader from "../ui/SectionHeader.astro";
 import Button from "../ui/Button.astro";
 const heading = "Contact Us";
@@ -80,10 +82,11 @@ const subHeading =
           </form>
         </div>
 
-        <img
-          src="/contact-us.png"
+        <Image
+          src={ContactUsImage}
           alt="Contact Us"
           class="h-full absolute right-0 -ml-[15rem] max-md:hidden"
+          loading="lazy"
         />
       </div>
     </div>

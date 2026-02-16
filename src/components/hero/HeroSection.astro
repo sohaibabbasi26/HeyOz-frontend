@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import HeroImage from '../../assets/images/Illustration.png';
 import Button from '@components/ui/Button.astro';
 ---
 
@@ -17,10 +19,11 @@ import Button from '@components/ui/Button.astro';
     </Button>
   </div>
   <div class="text-center w-[44%] flex justify-end max-md:hidden">
-    <img
-      src="/Illustration.png"
+    <Image
+      src={HeroImage}
       alt="Hero Image"
       class="mx-auto w-full h-auto object-cover"
+      loading="eager"
     />
   </div>
 </div>

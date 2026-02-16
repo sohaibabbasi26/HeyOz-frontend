@@ -1,41 +1,18 @@
 ---
+import { getCollection } from 'astro:content';
 import SectionHeader from "../ui/SectionHeader.astro";
+
 const heading = "Testimonials";
 const subHeading =
   "Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services";
 
-const testimonials = [
-  {
-    id: 1,
-    text: "We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.",
-    name: "John Smith",
-    position: "Marketing Director at XYZ Corp"
-  },
-  {
-    id: 2,
-    text: "We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.",
-    name: "Jane Doe",
-    position: "CEO at ABC Company"
-  },
-  {
-    id: 3,
-    text: "We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.",
-    name: "Mike Johnson",
-    position: "Marketing Director at DEF Corp"
-  },
-  {
-    id: 4,
-    text: "We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.",
-    name: "Sarah Williams",
-    position: "Director at GHI Inc"
-  },
-  {
-    id: 5,
-    text: "We have been working with Positivus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Positivus to any company looking to grow their online presence.",
-    name: "Tom Brown",
-    position: "Manager at JKL Ltd"
-  }
-];
+const allTestimonials = await getCollection('testimonials');
+const testimonials = allTestimonials
+  .sort((a, b) => a.data.order - b.data.order)
+  .map((t, index) => ({
+    id: index + 1,
+    ...t.data
+  }));
 ---
 
 <div class="h-auto mt-[3rem] w-full flex justify-center items-center">

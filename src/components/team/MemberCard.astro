@@ -17,7 +17,7 @@ const { name, position, image, description } = Astro.props;
   <div class="h-[95%] w-[95%] flex flex-col items-center relative">
     <img src="/linkedin-icon.png" alt="LinkedIn" class="absolute top-4 right-4 h-6 w-6 object-contain" />
     <div class="flex-1 flex h-[50%] w-[85%] items-end pb-2 justify-between gap-[1rem]">
-        <img src={image} alt={name} class="h-[80%] w-[45%] object-cover" />
+        <img src={image} alt={name} class="h-[80%] w-[45%] object-cover" loading="lazy" decoding="async" />
         <div class="h-full flex flex-col justify-end items-start w-full">
             <h3 class="font-medium text-[15px]">{name}</h3>
             <span class="text-sm w-full">{position}</span>

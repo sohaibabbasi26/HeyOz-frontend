@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import MakeThingsHappenImage from "../../assets/images/make-things-happen.png";
+import { getCollection } from 'astro:content';
 import SectionHeader from "../ui/SectionHeader.astro";
 import ServiceCard from "./ServiceCard.astro";
 import Button from "../ui/Button.astro";
@@ -6,42 +9,9 @@ import Button from "../ui/Button.astro";
 const heading = "Services";
 const subHeading =
   "At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:";
-const serviceCardData = [
-  {
-    title: "Search engine optimization",
-    image: "/service-one.png",
-  },
-  {
-    title: "Pay-per-click advertising",
-    image: "/service-two.png",
-    cardBg: "bg-heyOzGreen",
-    headingBg: "bg-white",
-  },
-  {
-    title: "Social Media Marketing",
-    image: "/service-three.png",
-    cardBg: "bg-black",
-    headingBg: "bg-white",
-    arrowBg: "bg-white",
-  },
-  {
-    title: "Email Marketing",
-    image: "/service-four.png",
-  },
-  {
-    title: "Content Creation",
-    image: "/service-five.png",
-    cardBg: "bg-heyOzGreen",
-    headingBg: "bg-white",
-  },
-  {
-    title: "Analytics and Tracking",
-    image: "/service-six.png",
-    cardBg: "bg-black",
-    headingBg: "bg-heyOzGreen",
-    arrowBg: "bg-white",
-  },
-];
+
+const allServices = await getCollection('services');
+const serviceCardData = allServices.sort((a, b) => a.data.order - b.data.order).map(s => s.data);
 ---
 
 <div class="w-full h-auto flex flex-col my-[3rem] items-center justify-center">
@@ -71,10 +41,11 @@ const serviceCardData = [
           </div>
 
           <div class="w-[50%] h-[85%] flex flex-col items-end justify-center max-md:hidden">
-            <img
-              src="/make-things-happen.png"
+            <Image
+              src={MakeThingsHappenImage}
               alt="Contact Us"
-              class="h-[17rem] "
+              class="h-[17rem]"
+              loading="lazy"
             />
           </div>
         </div>
