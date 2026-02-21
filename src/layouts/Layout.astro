@@ -21,7 +21,17 @@ const { title = 'HeyOz', description = 'Welcome to HeyOz' } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<link rel="preload" href="/_astro/space-gro....BhU9QXUp.woff2" as="font" type="font/woff2" crossorigin>
 		<link rel="preload" href="/_astro/index.B4f9YzbD.css" as="style">
-		<title>{title}</title>
+				<title>{title}</title>
+				<script type="application/ld+json">
+				{
+					"@context": "https://schema.org",
+					"@type": "Organization",
+					"name": "HeyOz",
+					"url": "https://hey-oz-frontend.vercel.app/",
+					"logo": "/favicon.svg",
+					"description": "Welcome to HeyOz"
+				}
+				</script>
 	</head>
 	<body>
 		<Navbar />
