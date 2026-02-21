@@ -11,3 +11,10 @@
     @apply min-h-screen bg-white font-sans text-gray-900 antialiased;
   }
 }
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/_astro/space-gro....BhU9QXUp.woff2') format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
