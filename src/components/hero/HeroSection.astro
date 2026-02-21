@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import HeroImage from '../../assets/images/Illustration.png';
+import HeroImage from '../../assets/images/Illustration.webp';
 import Button from '@components/ui/Button.astro';
 ---
 
@@ -24,6 +24,7 @@ import Button from '@components/ui/Button.astro';
       alt="Hero Image"
       class="mx-auto w-full h-auto object-cover"
       loading="eager"
+      fetchpriority="high"
     />
   </div>
 </div>
