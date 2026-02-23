@@ -12,7 +12,7 @@ const caseStudies = allCaseStudies.sort((a, b) => a.data.order - b.data.order);
   >
     {caseStudies.map((caseStudy, index) => (
       <>
-        <div class="flex-1 py-8 px-8 flex flex-col items-start justify-center">
+        <div class="flex-1 py-8 px-8 flex flex-col items-start justify-center transition-all duration-200 cursor-pointer hover:bg-white/10 hover:shadow-lg rounded-2xl">
           <p class="text-white">
             {caseStudy.data.description}
           </p>

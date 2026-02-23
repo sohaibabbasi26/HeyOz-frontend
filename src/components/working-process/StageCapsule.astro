@@ -8,8 +8,8 @@ interface Props {
 const { stageNumber, title, description } = Astro.props;
 ---
 
-<div class="stage-capsule w-full max-sm:min-h-5 flex-1 bg-heyOzGray rounded-3xl mt-4 px-8 max-sm:px-6 py-7 shadow-[0_0_0_1px_black,0_4px_0_0_black] transition-colors duration-300">
-  <div class="flex items-center justify-between">
+<div class="stage-capsule w-full max-sm:min-h-5 flex-1 bg-heyOzGray rounded-3xl mt-4 px-8 max-sm:px-6 py-7 shadow-[0_0_0_1px_black,0_4px_0_0_black] transition-all duration-200 cursor-pointer hover:shadow-lg hover:scale-[1.02] hover:bg-heyOzGreen/10">
+  <div class="flex items-center justify-between w-full" onclick="this.parentElement.querySelector('.toggle-btn').click()">
     <div class="flex gap-4 max-sm:gap-2 items-center">
       <span class="text-3xl font-medium text-black max-sm:text-2xl">{stageNumber}</span>
       <h3 class="text-lg font-medium max-sm:text-sm ">{title}</h3>
