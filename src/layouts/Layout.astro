@@ -3,6 +3,7 @@ import '@fontsource-variable/space-grotesk';
 import '@styles/global.css';
 import Navbar from '@components/ui/Navbar.astro';
 import SEO from '@components/common/SEO.astro';
+import styles from '@styles/global.css?inline';
 // ❌ Remove the duplicate: "../styles/global.css"
 
 interface Props {
@@ -34,15 +35,10 @@ const schema = {
     <meta name="generator" content={Astro.generator} />
     <meta name="google-site-verification" content="CvdXmsHUzt-7-ruJuj4qOzakjhAQ95lMTc9QBVm-QfE" />
 
-    <!-- ✅ Preconnect first -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- ✅ Preload font BEFORE css so browser fetches it immediately -->
     <link rel="preload" href="/_astro/space-gro....BhU9QXUp.woff2" as="font" type="font/woff2" crossorigin />
 
-    <!-- ❌ Remove this — preloading CSS that Astro already injects causes double load -->
-    <!-- <link rel="preload" href="/_astro/index.B4f9YzbD.css" as="style"> -->
-
+	<style set:html={styles} />
     <SEO {title} {description} {url} image={image} siteName={siteName} twitterHandle={twitterHandle} schema={schema} />
   </head>
   <body>
