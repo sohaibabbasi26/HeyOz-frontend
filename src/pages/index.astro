@@ -10,10 +10,14 @@ import ContactUs from "@components/contact-us/Index.astro";
 import Footer from "@components/footer/Index.astro";
 import Testimonials from "@components/testimonials/Index.astro";
 import FAQSchema from "@components/seo/FAQSchema.astro";
+import BreadCrumbs from "@components/seo/BreadCrumbs.astro";
+import BusinessSchema from "@/components/common/BusinessSchema.astro";
 ---
 
 <Layout title="HeyOz - Home">
   <FAQSchema />
+  <BreadCrumbs />
+  <BusinessSchema />
   <div class="max-w-screen-xl mx-auto w-full px-4">
     <HeroSection />
     <Services />

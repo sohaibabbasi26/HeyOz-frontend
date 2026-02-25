@@ -1,0 +1,28 @@
+---
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "HeyOz",
+  "url": "https://hey-oz-frontend.vercel.app",
+  "description": "HeyOz is a digital marketing agency offering SEO, PPC, social media marketing, content creation, email marketing, and analytics services.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Karachi",
+    "addressRegion": "Sindh",
+    "addressCountry": "PK"
+  },
+  "areaServed": "Worldwide",
+  "serviceType": [
+    "SEO",
+    "PPC Advertising",
+    "Social Media Marketing",
+    "Content Creation",
+    "Email Marketing",
+    "Analytics and Tracking"
+  ],
+  "sameAs": [
+    "https://linkedin.com/company/heyoz"
+  ]
+}
+---
+<script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />

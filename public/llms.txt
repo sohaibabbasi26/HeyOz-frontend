@@ -1,0 +1,21 @@
+# HeyOz
+
+> HeyOz is a Karachi-based digital marketing agency helping businesses 
+> grow online through SEO, PPC, social media marketing, content creation, 
+> email marketing, and analytics.
+
+## Services
+- SEO (Search Engine Optimization): We help businesses rank higher on Google and attract organic traffic
+- Pay-Per-Click Advertising: We manage paid ad campaigns to drive targeted traffic and maximize ROI
+- Social Media Marketing: We grow your brand presence on Facebook, Instagram, and LinkedIn
+- Content Creation: We produce blogs, graphics, and videos to engage your audience
+- Email Marketing: We design campaigns to nurture leads and drive conversions
+- Analytics and Tracking: We implement tracking to measure and optimize your marketing performance
+
+## About
+- Company: HeyOz Digital Marketing Agency
+- Location: Karachi, Pakistan
+- Website: https://hey-oz-frontend.vercel.app
+
+## Contact
+- Contact Page: https://hey-oz-frontend.vercel.app/#contact
