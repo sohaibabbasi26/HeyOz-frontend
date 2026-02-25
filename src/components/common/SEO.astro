@@ -63,32 +63,59 @@ const {
 
 
 <!-- JSON-LD Structured Data -->
-{schema && (
-  <script type="application/ld+json">{JSON.stringify(schema)}</script>
-)}
-{faqs && (
-  <script type="application/ld+json">{JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": faqs.map(faq => ({
-      "@type": "Question",
-      "name": faq.question,
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": faq.answer
+
+{schema && typeof schema === 'object' && Object.keys(schema).length > 0 && (
+  <script type="application/ld+json">
+    {(() => {
+      try {
+        return JSON.stringify(schema);
+      } catch (e) {
+        return '';
       }
-    }))
-  })}</script>
+    })()}
+  </script>
 )}
-{howto && (
-  <script type="application/ld+json">{JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": howto.name,
-    "step": howto.steps.map(step => ({
-      "@type": "HowToStep",
-      "name": step.name,
-      "text": step.text
-    }))
-  })}</script>
+
+{Array.isArray(faqs) && faqs.length > 0 && faqs.every(faq => faq && faq.question && faq.answer) && (
+  <script type="application/ld+json">
+    {(() => {
+      try {
+        return JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.answer
+            }
+          }))
+        });
+      } catch (e) {
+        return '';
+      }
+    })()}
+  </script>
+)}
+
+{howto && typeof howto === 'object' && howto.name && Array.isArray(howto.steps) && howto.steps.length > 0 && howto.steps.every(step => step && step.name && step.text) && (
+  <script type="application/ld+json">
+    {(() => {
+      try {
+        return JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": howto.name,
+          "step": howto.steps.map(step => ({
+            "@type": "HowToStep",
+            "name": step.name,
+            "text": step.text
+          }))
+        });
+      } catch (e) {
+        return '';
+      }
+    })()}
+  </script>
 )}
