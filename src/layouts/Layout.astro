@@ -1,10 +1,9 @@
 ---
-
 import '@fontsource-variable/space-grotesk';
 import '@styles/global.css';
 import Navbar from '@components/ui/Navbar.astro';
 import SEO from '@components/common/SEO.astro';
-import "../styles/global.css";
+// ❌ Remove the duplicate: "../styles/global.css"
 
 interface Props {
   title?: string;
@@ -17,31 +16,39 @@ const image = '/favicon.svg';
 const siteName = 'HeyOz';
 const twitterHandle = '@HeyOz';
 const schema = {
-	"@context": "https://schema.org",
-	"@type": "Organization",
-	"name": siteName,
-	"url": url,
-	"logo": image,
-	"description": description
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": siteName,
+  "url": url,
+  "logo": image,
+  "description": description
 };
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="google-site-verification" content="CvdXmsHUzt-7-ruJuj4qOzakjhAQ95lMTc9QBVm-QfE" />
-		<link rel="preload" href="/_astro/space-gro....BhU9QXUp.woff2" as="font" type="font/woff2" crossorigin>
-		<link rel="preload" href="/_astro/index.B4f9YzbD.css" as="style">
-		<SEO {title} {description} {url} image={image} siteName={siteName} twitterHandle={twitterHandle} schema={schema} />
-	</head>
-	<body>
-		<Navbar />
-		<main>
-			<slot />
-		</main>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="google-site-verification" content="CvdXmsHUzt-7-ruJuj4qOzakjhAQ95lMTc9QBVm-QfE" />
+
+    <!-- ✅ Preconnect first -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- ✅ Preload font BEFORE css so browser fetches it immediately -->
+    <link rel="preload" href="/_astro/space-gro....BhU9QXUp.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- ❌ Remove this — preloading CSS that Astro already injects causes double load -->
+    <!-- <link rel="preload" href="/_astro/index.B4f9YzbD.css" as="style"> -->
+
+    <SEO {title} {description} {url} image={image} siteName={siteName} twitterHandle={twitterHandle} schema={schema} />
+  </head>
+  <body>
+    <Navbar />
+    <main>
+      <slot />
+    </main>
+  </body>
 </html>
