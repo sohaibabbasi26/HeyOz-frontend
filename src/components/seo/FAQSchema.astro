@@ -1,0 +1,44 @@
+---
+// FAQSchema.astro: Dynamic FAQ JSON-LD for HeyOz
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const faqs: FAQItem[] = [
+  {
+    question: "What digital marketing services does HeyOz provide?",
+    answer: "HeyOz offers SEO, pay-per-click advertising, social media marketing, content creation, email marketing, analytics, and tracking for businesses of all sizes."
+  },
+  {
+    question: "How can HeyOz help my business grow online?",
+    answer: "We use proven strategies in SEO, PPC, and social media to increase your visibility, attract new customers, and drive measurable results."
+  },
+  {
+    question: "Who is on the HeyOz team?",
+    answer: "Our team consists of experienced digital marketers, content creators, and analysts dedicated to your success."
+  },
+  {
+    question: "Can I see examples of your work?",
+    answer: "Yes! Visit our Case Studies section to explore real-life examples of our digital marketing success."
+  },
+  {
+    question: "How do I get started with HeyOz?",
+    answer: "Contact us for a free proposal or book a consultation directly from our website."
+  }
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+---
+<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
